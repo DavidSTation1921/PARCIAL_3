@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Panamá - Venta de Boletos</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Eventos Panamá</h1>
+            <h2>Concierto en el Estadio Roberto Durán</h2>
+        </header>
+
+        <main>
+            <!-- Sección de entrada de datos -->
+            <section class="form-section">
+                <h3>Registro de Venta de Boletos</h3>
+                <form id="ventaForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre del Cliente:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoría de Boletos:</label>
+                        <select id="categoria" required>
+                            <option value="">Seleccione una categoría</option>
+                            <option value="vip">Puestos VIP - $50.00</option>
+                            <option value="butacas">Puestos Butacas - $30.00</option>
+                            <option value="generales">Puestos Generales - $15.00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad de Boletos:</label>
+                        <input type="number" id="cantidad" min="1" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary">Agregar Venta</button>
+                        <button type="button" id="limpiar" class="btn-secondary">Limpiar Formulario</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Sección de resumen de ventas -->
+            <section class="summary-section">
+                <h3>Resumen de Ventas</h3>
+                
+                <!-- Resumen por categoría -->
+                <div class="summary-cards">
+                    <div class="card vip-card">
+                        <h4>VIP</h4>
+                        <p class="cantidad">0 boletos</p>
+                        <p class="total">$0.00</p>
+                    </div>
+                    <div class="card butacas-card">
+                        <h4>Butacas</h4>
+                        <p class="cantidad">0 boletos</p>
+                        <p class="total">$0.00</p>
+                    </div>
+                    <div class="card generales-card">
+                        <h4>Generales</h4>
+                        <p class="cantidad">0 boletos</p>
+                        <p class="total">$0.00</p>
+                    </div>
+                </div>
+
+                <!-- Resumen total -->
+                <div class="total-summary">
+                    <h4>Total General</h4>
+                    <p>Total de Boletos: <span id="totalBoletos">0</span></p>
+                    <p>Ingreso Total: $<span id="ingresoTotal">0.00</span></p>
+                </div>
+
+                <!-- Historial de ventas -->
+                <div class="sales-history">
+                    <h4>Historial de Ventas</h4>
+                    <table id="ventasTable">
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Categoría</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las filas se generarán dinámicamente con JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Eventos Panamá - Todos los derechos reservados</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
